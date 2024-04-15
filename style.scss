@@ -1,0 +1,34 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body{
+  background-color: #1F155B;
+}
+
+h1, h2, h3, p{ 
+  color: white;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 1em;
+  color: #1F155B;
+}
+
+
+.vector{
+  position: absolute;
+  top: -5em;
+  left: -5em;  
+  width: 100vw;
+  height: 200vw;
+  z-index: -1; 
+}
+
+.number-one{
+  width: 30vw;
+  position: relative;
+  top: 45vw;
+  left: 40vw; 
+}
+
