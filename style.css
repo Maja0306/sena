@@ -1,32 +1,74 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: #1F155B;
 }
 
-h1, h2, h3, p {
-  color: white;
+h1, p {
   text-align: center;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin: 1em;
-  color: #1F155B;
+  color: white;
+}
+
+h1 {
+  font-family: "Unbounded", sans-serif;
+  font-size: 48px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-family: "Encode Sans", sans-serif;
+  font-size: 24px;
+}
+
+.arrow-pink {
+  display: flex;
+  justify-content: center;
+}
+.arrow-pink img {
+  width: 5em;
 }
 
 .vector {
-  position: absolute;
-  top: -5em;
-  left: -5em;
-  width: 100vw;
-  height: 200vw;
+  display: block;
+  margin: 16em auto;
+  width: 50vw;
+  height: auto;
   z-index: -1;
 }
 
-.number-one {
-  width: 30vw;
+.mouse-effect {
+  margin: 10em 0;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.holder {
   position: relative;
-  top: 45vw;
-  left: 40vw;
+  width: 48rem;
+  height: 20rem;
+}
+
+.shadow, .img {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 22rem;
+  height: 27rem;
+  background-size: cover;
+  background-position: 50% 50%;
+  overflow: hidden;
+}
+
+.shadow {
+  background-image: url(padlock-pink.png);
+}
+
+.img {
+  background-image: url(padlock.png);
 }/*# sourceMappingURL=style.css.map */
