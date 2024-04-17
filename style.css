@@ -58,8 +58,8 @@ p {
   position: absolute;
   inset: 0;
   margin: auto;
-  width: 22rem;
-  height: 27rem;
+  width: 22vw;
+  height: 27vw;
   background-size: cover;
   background-position: 50% 50%;
   overflow: hidden;
@@ -71,4 +71,44 @@ p {
 
 .img {
   background-image: url(padlock.png);
+}
+
+#box-senarios {
+  margin: 10em auto;
+  width: 70vw;
+  height: auto;
+  background-color: #544a8c;
+  border-radius: 3em;
+}
+#box-senarios #question {
+  padding-top: 1em;
+  color: white;
+  font-size: 2.5em;
+  margin: 0 15vw;
+  text-align: center;
+}
+#box-senarios #answer-btn {
+  display: grid;
+  padding-top: 5em;
+}
+#box-senarios .btn {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 2em;
+  width: 40vw;
+  height: 5em;
+  margin: 2em auto;
+  font-size: 1em;
+}
+#box-senarios .btn:hover {
+  background-color: rgba(0, 0, 0, 0.269);
+  cursor: pointer;
+}
+#box-senarios .correct {
+  background-color: aqua;
+}
+#box-senarios .undefined, #box-senarios .undefined:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(37, 0, 100);
 }/*# sourceMappingURL=style.css.map */
