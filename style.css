@@ -111,4 +111,8 @@ p {
 #box-senarios .undefined, #box-senarios .undefined:hover {
   background-color: rgb(255, 255, 255);
   color: rgb(37, 0, 100);
+}
+
+.in-view {
+  animation: fade 1s 0.2s both;
 }/*# sourceMappingURL=style.css.map */

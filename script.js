@@ -75,11 +75,12 @@ document.addEventListener('mousemove', move)
 
 // ! Branching senarios
 
+
 const questions = [
   {
     question: "1.Du skal lave et kodeord på Facebook, hvad gør du?",
     answers: [
-      { text: 'Laver én selv', correct: undefined},
+      { text: 'Laver én selv', correct: undefined}, 
       { text: 'Får Facebook til at generere én kode', correct: undefined},
     ]
   },
@@ -101,7 +102,6 @@ const questions = [
 
 const questionElement = document.getElementById('question');
 const answerBtn = document.getElementById('answer-btn');
-const box = document.getElementById('box-senarios');
 
 // *antallet af spørgsmål start ved spørgsmål 1 som er betegnet som nul
 let currentQuestionIndex = 0; 
@@ -116,7 +116,7 @@ showQuestion = () => {
   let currentQuestion = questions[currentQuestionIndex];
   questionElement.innerHTML = currentQuestion.question;
 
-  currentQuestion.answers.forEach(answer => {
+  currentQuestion.answers.forEach(answer => { // ! kig her 
     const button = document.createElement('button');
     button.innerHTML = answer.text;
     button.classList.add('btn');
@@ -145,23 +145,27 @@ selectAnswer = (e) => {
   }
 }
 
-handleNextButton = () => {
-  if(currentQuestionIndex < questions.length){
-    currentQuestionIndex++;
-    showQuestion();
-  }
-}
-
 nextSenario = () => {
   setTimeout(() => {
-    if(currentQuestionIndex < questions.length){
-      handleNextButton();
+    if (currentQuestionIndex === 0){
+      currentQuestionIndex = 2;
+      showQuestion();
+    } else if (currentQuestionIndex === 2){
+      currentQuestionIndex = 0;
+      showQuestion();
     } else {
-      startQuiz();
+      currentQuestionIndex++;
+      showQuestion();
     }
   }, 500);
 }
 
+
+
 startSenarios();
+
+document.addEventListener('click', e => {
+  console.log(e)
+})
 
 // Hvis man klikker på en boks, så skal senarie 1 rykke ud og senarie 3 skal rykke ind
