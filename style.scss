@@ -4,13 +4,20 @@
   scroll-behavior: smooth;
 }
 
+$color-bg: #2C2269;
+$color-pink: #C400D5;
+$color-black-transparent: #0000003b;
+$color-white-transparent: #ffffff20;
+$color-white: #ffffff;
+$color-black: #000000;
+
 body{
-  background-color: #1F155B;
+  background-color: $color-bg;
 }
 
 h1, p{
   text-align: center;
-  color: white;
+  color: $color-white;
 }
 h1{
   font-family: "Unbounded", sans-serif;
@@ -79,31 +86,32 @@ p{
   margin: 10em auto;
   width: 70vw;
   height: auto;
-  background-color: #544a8c;
+  background-color: $color-black-transparent;
   border-radius: 3em; 
+  border: 3px solid $color-black; 
   #question{
     padding-top: 1em;
-    color: white;
+    color: $color-white;
     font-size: 2.5em;
     margin: 0 15vw;
     text-align: center;
   }
   #answer-btn{
     display: grid;
-    padding-top: 5em;
+    padding: 5em 0;
   }
   .btn{
     background-color: transparent;
-    color: white;
+    color: $color-white;
     border: 2px solid white;
-    border-radius: 2em;
+    border-radius: 1.5em;
     width: 40vw; 
-    height: 5em;
-    margin: 2em auto;
-    font-size: 1em;
+    height: 4em;
+    margin: 1.5em auto;
+    font-size: 1.5em;
   }
   .btn:hover{
-    background-color: rgba(0, 0, 0, 0.269);
+    background-color: $color-black-transparent;
     cursor: pointer;
   }
 
@@ -114,7 +122,6 @@ p{
     background-color: rgb(255, 255, 255);
     color: rgb(37, 0, 100);
   }
-
 }
 
 .in-view{

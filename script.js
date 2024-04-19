@@ -96,6 +96,7 @@ const questions = [
     answers: [
       { text: 'Laver én selv', correct: undefined},
       { text: 'Får Facebook til at generere én kode', correct: undefined},
+      { text: 'Får Facebook til at generere én kode', correct: undefined},
     ]
   }
 ];
@@ -147,20 +148,26 @@ selectAnswer = (e) => {
 
 nextSenario = () => {
   setTimeout(() => {
-    if (currentQuestionIndex === 0){
-      currentQuestionIndex = 2;
-      showQuestion();
-    } else if (currentQuestionIndex === 2){
-      currentQuestionIndex = 0;
-      showQuestion();
-    } else {
-      currentQuestionIndex++;
-      showQuestion();
-    }
-  }, 500);
+    const senarios = document.getElementById('answer-btn');
+    const firstButton = senarios.getElementsByClassName('btn')[0];
+    const secondButton = senarios.getElementsByClassName('btn')[1];
+    const thirdButton = senarios.getElementsByClassName('btn')[2];
+
+    firstButton.addEventListener('click', () => {
+      if (currentQuestionIndex === 0) {
+        currentQuestionIndex = 2;
+        showQuestion();
+      } else {
+        currentQuestionIndex++;
+        showQuestion();
+      }
+    }); 
+  }, 1);
 }
 
+hello = () => {
 
+}
 
 startSenarios();
 
