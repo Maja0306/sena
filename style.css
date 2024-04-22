@@ -77,9 +77,8 @@ p {
   margin: 10em auto;
   width: 70vw;
   height: auto;
-  background-color: rgba(0, 0, 0, 0.231372549);
+  background-color: #6C62A9;
   border-radius: 3em;
-  border: 3px solid #000000;
 }
 #box-senarios #question {
   padding-top: 1em;
