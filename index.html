@@ -7,49 +7,95 @@
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Encode+Sans:wght@100..900&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/22509d7ca3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="mouse-effect">
-    <div class="holder">
-      <div class="shadow"></div> 
-      <div class="img">
-      </div>
+  <header>
+    <div class="button-header-question">
+      <img src="pink-button.png" alt="">
+      <p>?</p>
     </div>
-  </div>
+    <a class="logo-frame" href="index.html"><img class="logo" src="logo.png" alt=""></a> 
+    <div class="button-header-phone">
+      <img src="pink-button.png" alt="">
+      <p><i class="fa-solid fa-phone"></i></p>
+    </div>
+  </header>
 
-  <div id="box-senarios">
-    <div id="senarios">
-      <h2 id="question">Spørgsmål placeres her</h2>
-      <div id="answer-btn">
-        <button class="btn" data-number="1">Svar 1</button>
-        <button class="btn" data-number="2">Svar 2</button>
-        <button class="btn" data-number="3">Svar 3</button>
+  <main>
+    <div class="question-box">
+      <h2>Tips til at Sikre en Stærk Kode og Undgå Hacking</h2>
+      <p>Vi er dedikerede til at sikre dine digitale oplevelser gennem effektiv håndtering af adgangskoder. Hos os forstår vi vigtigheden af at beskytte dine personlige oplysninger mod hacking og uautoriseret adgang. Derfor ønsker vi at hjælpe dig med at skabe og vedligeholde stærke, sikre adgangskoder.</p>
+      <p>Vores mål er at give dig de nødvendige værktøjer og ressourcer til at skabe adgangskoder, der er både robuste og lette at huske. Vi forstår, at det kan være udfordrende at finde den rette balance mellem kompleksitet og bekvemmelighed. Derfor tilbyder vi rådgivning og vejledning til at skabe unikke, komplekse adgangskoder, der beskytter dine konti uden at være for besværlige.</p>
+      <p>Ud over at hjælpe med at skabe stærke adgangskoder tilbyder vi også rådgivning om bedste praksis til håndtering af dine adgangskoder. Dette inkluderer at undgå genbrug af adgangskoder, regelmæssig opdatering af adgangskoder og aktivering af to-faktor-authentication (2FA) for ekstra sikkerhed.</p>
+      <p>Vores dedikerede team står klar til at hjælpe dig med at styrke din digitale sikkerhed og give dig ro i sindet, når det kommer til beskyttelsen af dine online konti og oplysninger. Kontakt os i dag for at lære mere om, hvordan vi kan hjælpe dig med at forbedre dine adgangskoder og generelt håndtere dem mere effektivt.</p>
+    </div>    
+    <div class="grid-two-colums">
+      <img src="padlock-pink.png" alt="">
+      <div>
+        <h1>Forbedre din digitale sikkerhed</h1>
+        <p>Denne side er for at hjælpe dig med at sikre, at dine koder er stærke og håndteres korrekt. Vi vil guide dig igennem, hvordan du opretter koder, der er sikre - herunder hvor lange de skal være, hvad de bør indeholde, og hvordan du bedst opbevarer dine kodeord. For at gøre dette mere engagerende, har vi inkluderet tekst og et interaktivt spil, der udvikler sig baseret på de valg, du foretager undervejs. Prøv den gerne flere gange, for at se, hvordan de forskellige scenarier kan påvirke dine kodeord! Læs mere om kodeord nedenfor, for at få en dybere forståelse for emnet. </p>
       </div>
     </div>
-  </div>
-  <svg 
-  class="vector" 
-  width="1287" 
-  height="806" 
-  viewBox="0 0 1287 806" 
-  fill="none" 
-  xmlns="http://www.w3.org/2000/svg">
-    <rect 
-    x="1.5" 
-    y="1.5"  
-    width="1284" 
-    height="803" 
-    rx="59.5" 
-    fill="black" 
-    fill-opacity="0.2" 
-    stroke="white" 
-    stroke-width="5"/>
-    </svg>
-    
+
+    <div class="one-colume">
+      <h2>Længden af et kodeord</h2>
+      <p>Det anbefales, at et kodeord er minimum 12 tegn langt, da det øger kompleksiteten, hvilket gør det sværere for hackeren at gætte eller bryde kodeordet. Så ved at lave dine kodeord med en minimumslægde på 12 tegn, så øger du sikkerheden markant for at angribere kan knække koden med de traditionelle hacking-metoder.</p>
+    </div>
+
+    <div class="grid-two-colums-reverse">
+      <div>
+        <h2>Indholdet i dine kodeord</h2>
+        <p>Indholdet i dine koder, kan også være med til at sikre dig et stærkt kodeord. Der er dog mange, som forsøger at gøre det nemt for sig selv, ved at bruge fødselsdage og/eller navne, men det har sine ulemper. Her er nogle af de ting, du skal undgå at inddrage i dine kodeord:</p>
+        <ul>
+          <li><p>Personlige oplysninger, som fødselsdage og/eller navne.</p></li>
+          <li><p>Simple og meget brugte ord, såsom “sommer”, “hus” eller “ hund”.</p></li>
+          <li><p>Gentagelser eller rækkefølger som “111111” og “1234567”</p></li>
+          <li><p>Genbrug af koder skal undgåes, da alle dine kontoer, kan bliver hacket, hvis én af profilerne bliver hacket.</p></li> 
+        </ul>
+        <p>Du kan forsøge dig med dine egne huskeregler. Et godt eksempel kunne være, at hver tredje bogstav skal være stort, og efter hvert femte bogstav, så skal der komme et tal. Indholdet kunne være forbogstaverne i de to første linjer i din yndlingssang og numrene på antal af bogstaver i sangerens navn, efternavn og sang. Det giver et kompliceret kodeord, som hackeren får svært ved at hacke. </p>
+      </div>
+      <div class="fakta-box">
+        <p class="bold">Sanger:</p>
+        <p>Kim Larsen</p>
+        <p class="bold">Sang:</p>
+        <p>Papirsklip</p>
+        <p class="bold">De to første linjer</p>
+        <p>Når nu min verden bliver kold og forladt, finder jeg en trøst i mine kæreste skat.</p>
+        <p class="bold">Kodeord</p>
+        <p>nnMvb3KofFj6eTimK10s</p>
+      </div>
+    </div>
+    <div class="one-colume">
+      <h2>Del andrig dine koder med andre</h2>
+      <p>Stol altid kun på dig selv, hvad angår dine kodeord! Du må aldrig dele dem med andre, uanset om du kender vedkommende godt, eller hvis det er en fremmede. Hvis du deler dem med andre, så kan du give dem adgang til personlige oplysninger, indhold og at foretage handlinger i dit navn.</p>
+    </div>
+    <div class="one-colume">
+      <h2>Opbevar dine koder korrekt</h2>
+      <p>Den bedste måde at opbevare dine kodeord, er ved hjælp af en kodemanager. Den gemmer dine kodeord på en sikker måde, og her skal du kun huske på ét kodeord, for at komme ind på siden/appen.</p>
+      <ul>
+        <li><p>Du skal undgå at opbevare det et sted, hvor det er tilgængeligt for andre. Eksempelvis på et stykke papir, som du lægger i en skuffe. Det kan nemt blive stjålet eller blive væk.</p></li>
+        <li><p>Selvom det lyder fristende at browseren tilbyder at gemme dine adgangskoder, så er det heller ikke sikkert. Så kan alle der benytter sig af din computer eller telefon få adgang til alle de profiler.</p></li>
+        <li><p>Det anbefales heller ikke, at gemme sine koder i noter på din telefon/computer, da det også er nemt at komme til, hvis din enhed bliver hacket, så har hackeren adgang til alle dine kodeord.</p></li>
+      </ul>
+    </div>
+
+    <div class="grid-two-colums-reverse">
+      <div>
+        <h2>Test din viden!</h2>
+        <p>For at teste din viden, så har vi lavet et interaktivt spil, som udfordre dig i det du har lært på siden. Prøv også gerne spillet flere gange, for at se konsekvenserne af dine handlinger, hvis du laver fejl. </p>
+      </div>
+      <a href="game.html">
+        <div class="pink-play-button">
+          <p>Start spillet</p>
+        </div>
+      </a>
+    </div>
+
+  </main>
+
 </body>
 </html>

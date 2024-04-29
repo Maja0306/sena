@@ -15,19 +15,46 @@ body{
   background-color: $color-bg;
 }
 
-h1, p{
-  text-align: center;
+h1, h2, p{
   color: $color-white;
 }
+h1, h2{
+  text-align: center;
+}
 h1{
-  font-family: "Unbounded", sans-serif;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
   font-size: 48px;
   margin-top: 60px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+}
+h2{
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 40px;
+  margin-bottom: 50px;
 }
 p{
-  font-family: "Encode Sans", sans-serif;
-  font-size: 24px;
+  font-size: 26px; 
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+main p{
+  line-height: 1.5em;
+  letter-spacing: 1px; 
+}
+.bold{
+  font-weight: 700;
+}
+ul{
+  margin: 3em 0;
+  li{
+  list-style-image: url(Ellipse\ 6.png);
+  margin: 1em 0;
+  }
 }
 
 //! Header
@@ -61,8 +88,8 @@ header{
 
 .button-header-question p{
   top: 0.5rem;  
-  left: 2.2rem;
-  font-size: 2.5rem;
+  left: 2rem;
+  font-size: 3rem;
 } 
 .logo{
   width: 200px;
@@ -78,7 +105,7 @@ header{
   }
   to{
     transform: rotate(180deg);
-    color: rgb(255, 255, 255);
+    color: rgb(211, 74, 184);
     font-size: 5rem;
   }
 }
@@ -96,7 +123,7 @@ header{
 }
 .active-2{
   animation: rotateAndColorChange2 0.3s forwards;
-  filter: brightness(4);
+  filter: brightness(6);
 }
 
 //! Scalere box 
@@ -106,7 +133,7 @@ header{
   }
   to{
     transform: scale(1);
-    filter: brightness(4);
+    filter: brightness(6);
   }
 }
 .active-3{
@@ -122,6 +149,7 @@ header{
   background-color: $color-pink;
   position: absolute;
   overflow: hidden;
+  z-index: 2;
   h1, p{
     color: black;
     padding: 1vw 20vw;
@@ -162,47 +190,110 @@ header{
 
 // ! senarios
 
-#box-senarios{
-  margin: 2em auto;
-  width: 90vw; 
-  height: auto;
+#quiz-container {
+  width: 70vw;
   background-color: #6C62A9;
-  border-radius: 3em; 
-  #question{
-    padding-top: 1em;
-    color: $color-white;
-    font-size: 2.5em;
-    margin: 0 15vw;
-    text-align: center;
-  }
-  #answer-btn{
-    display: grid;
-    padding: 100px 0;
-  }
-  .btn{
-    background-color: transparent;
-    color: $color-white;
-    border: 7px solid white;
-    border-radius: 1.5em;
-    width: 40vw; 
-    height: 109px;
-    margin: 15px auto;
-    font-size: 1.5em;
-  }
-  .btn:hover{
-    background-color: $color-black-transparent;
+  margin: 8rem auto 0 auto;
+  border-radius: 1rem; 
+  text-align: center; 
+  padding: 3rem;
+}
+#question, #feedback{
+  color: #ffffff;
+  font-size: 2.5rem; 
+  padding: 0 10rem;
+}
+#feedback{
+  margin-bottom: 3rem;
+}
+#answers{
+  list-style: none; 
+  margin: auto;
+  padding: 4rem 0;
+  button{
+    margin: 1rem auto;
+    width: 40vw;
+    border: 5px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    border-radius: 2rem;
+    padding: 1rem 10rem;
+    line-height: 3rem;
     cursor: pointer;
+    background-color: #6C62A9; 
+    font-size: 1.5rem;
   }
+  button:hover{
+    background-color: white;
+    color: $color-bg;
+  }
+}
+#restart-button{
+  color: white;
+  border: none;
+  background-color: $color-bg;
+  margin: 1rem auto;
+  width: 50vw;
+  border-radius: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+}
 
-  .correct{
-    background-color: aqua;
+#restart-button:hover{
+  background-color: white;
+  color: $color-bg; 
+}
+
+//! Grid med to kolonner
+.grid-two-colums{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin: 6em 15vw;
+  img{
+    width: 200px;
   }
-  .undefined, .undefined:hover{
-    background-color: rgb(255, 255, 255);
-    color: rgb(37, 0, 100);
+  div{
+    margin: auto 5em; 
+  }
+}
+.grid-two-colums-reverse{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin: 6em 15vw;
+  img{
+    width: 200px;
+  }
+  div{
+    margin: auto 2em; 
   }
 }
 
-.in-view{
-  animation: fade 1s 0.2s both;
+
+//! Én kolonne
+.one-colume{
+  margin: 12em 30em;
+}
+
+//! Fakta-box 
+.fakta-box{
+  background-color: $color-white-transparent;
+  border-radius: 1rem;
+  padding: 4em;
+  p{
+    margin: 1em auto;
+  }
+}
+
+//! Pink play knap 
+.pink-play-button{
+  border: 7px solid $color-pink;
+  border-radius: 2vw;
+  p{
+    color: $color-pink;
+    text-align: center;
+    padding: 2em 0;
+    font-weight: 700; 
+  }
+}
+.pink-play-button:hover{
+  background-color: $color-black-transparent;
 }
