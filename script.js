@@ -1,86 +1,4 @@
-// ! Få spørgsmål og svar til at flyve ind på siden
 
-// ! Scroll ned på siden ved hjælp af pilen
-// const arrow = document.querySelector('div.arrow-pink')
-
-// const scrollArrow = () => {
- // window.scrollTo(500, document.body.scrollHeight) 
-//}
-
-// scrollArrow() 
-// document.addEventListener('click', scrollArrow)
-
-// ! En lås der åbner, hvis man svare 'forkert'.
-
-// ! Branching senarios
-/*
-const questions = [
-  {
-    question: "Du skal lave et kodeord på Facebook, hvad gør du?",
-    answers: [
-      { text: 'Jeg laver én selv', correct: undefined}, 
-      { text: 'Jeg får Facebook til at generere en svær kode, hvis dette er muligt', correct: undefined},
-    ]
-  },
-  {
-    question: "Det kan man også! Men lad os lige sikre, at dit kodeord er stærkt nok! Hvor mange tegn vil du bruge?",
-    answers: [
-      { text: 'Imellem 5-11 tegn', correct: undefined},
-      { text: 'Minimum 12 tegn', correct: undefined},
-    ]
-  },
-  {
-    question: "Godt valgt! Det er med til at sikre et stærkt kodeord! Hvordan vil du gemme din kode?",
-    answers: [
-      { text: 'Jeg skriver det på et stykke papir', correct: undefined},
-      { text: 'Jeg bruger en kodemanager', correct: undefined},
-    ]
-  },
-  {
-    question: "5-11 tegn det er for lidt, til at skabe et stærkt kodeord! Hvad skal dit kodeord indeholde?",
-    answers: [
-      { text: 'Det skal være tilfældige tal og bogstaver', correct: undefined},
-      { text: 'Det skal være mit navn og min fødselsdag', correct: undefined},
-    ]
-  },
-  {
-    question: "Det kan man godt, men pas på, at det ikke bliver væk! Hvor lægger du det?",
-    answers: [
-      { text: 'I min pung', correct: undefined},
-      { text: 'I mit pengeskab', correct: undefined},
-    ]
-  },
-  {
-    question: "Når du bruger minimum 12 tegn, er det med til at skabe et stærkt kodeord! Du er bange for at glemme din kode, vælger du at dele det med din kæreste?",
-    answers: [
-      { text: 'Ja', correct: undefined},
-      { text: 'Nej', correct: undefined},
-    ]
-  },
-  {
-    question: "Det kan man godt! Men pas på at det ikke bliver væk! Hvor lægger du det hen?",
-    answers: [
-      { text: 'I min køkkenskuffe', correct: undefined},
-      { text: 'I mit pengeskab', correct: undefined},
-    ]
-  },
-  {
-    question: "Godt valgt! Man må aldrig dele sine koder med andre! Hvordan vil du huske dit kodeord?",
-    answers: [
-      { text: 'Jeg bruger en kodemanager', correct: undefined},
-      { text: 'Jeg har en skarp hukommelse, så jeg kan godt huske den!', correct: undefined},
-    ]
-  },
-  {
-    question: "Godt valgt! Det er med til at sikre et stærkt kodeord! Hvordan vil du gemme din kode?",
-    answers: [
-      { text: 'Jeg bruger en kodemanager', correct: undefined},
-      { text: 'Jeg skriver det på et stykke papir', correct: undefined},
-    ]
-  }
-];*/
-
-// script.js
 document.addEventListener('DOMContentLoaded', function() {
   const questions = {
       start: {
@@ -248,3 +166,24 @@ buttonQuestion.addEventListener('click', rotateAndColorChange = () => {
     }
   }, 500);
 });
+
+//! Få indhold til at poppe ind på siden, når man scroller
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting){
+        entry.target.classList.add('in-view')
+      }
+    })
+  }, 
+  {
+    rootMargin: "0px", 
+    threshold: [0, 0.1, 1],
+  },
+)
+
+const tags = document.querySelectorAll('div.box'); 
+
+tags.forEach((tag) => {
+  observer.observe(tag)
+})

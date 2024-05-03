@@ -12,10 +12,6 @@ h1, h2, p {
   color: #ffffff;
 }
 
-h1, h2 {
-  text-align: center;
-}
-
 h1 {
   font-family: "Space Mono", monospace;
   font-weight: 700;
@@ -23,30 +19,54 @@ h1 {
   font-size: 48px;
   margin-top: 60px;
   margin-bottom: 50px;
+  text-align: center;
+}
+h1 span {
+  font-size: 100px;
 }
 
-h2 {
+h2, #question, #feedback {
   font-family: "Space Mono", monospace;
   font-weight: 700;
   font-style: normal;
   font-size: 40px;
   margin-bottom: 50px;
 }
+h2 span, #question span, #feedback span {
+  font-size: 80px;
+}
 
-p {
+h3 {
+  font-size: 36px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+p, #answers button {
   font-size: 26px;
   font-family: "Play", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
+@media only screen and (max-width: 1000px) {
+  p {
+    font-size: 23px;
+  }
+  h3 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 36px;
+  }
+  h1 {
+    font-size: 40px;
+  }
+}
 main p {
   line-height: 1.5em;
   letter-spacing: 1px;
-}
-
-.bold {
-  font-weight: 700;
 }
 
 ul {
@@ -60,7 +80,7 @@ ul li {
 header {
   display: grid;
   grid-template-columns: auto 4fr auto;
-  margin: 35px 100px;
+  margin: 35px 100px 0 100px;
 }
 header img {
   cursor: pointer;
@@ -94,7 +114,7 @@ header img {
 }
 
 .logo {
-  width: 200px;
+  width: 300px;
   height: auto;
 }
 
@@ -108,7 +128,6 @@ header img {
   }
   to {
     transform: rotate(180deg);
-    color: rgb(211, 74, 184);
     font-size: 5rem;
   }
 }
@@ -116,7 +135,7 @@ header img {
   animation: rotateAndColorChange 0.3s forwards;
 }
 
-@keyframes rotateAndColorChange2 {
+@keyframes scaleButton {
   from {
     transform: scale(1);
   }
@@ -125,28 +144,28 @@ header img {
   }
 }
 .active-2 {
-  animation: rotateAndColorChange2 0.3s forwards;
-  filter: brightness(6);
+  animation: scaleButton 0.3s forwards;
+  filter: brightness(4);
 }
 
-@keyframes rotateAndColorChange3 {
+@keyframes scaleBox {
   from {
     transform: scale(0);
   }
   to {
     transform: scale(1);
-    filter: brightness(6);
+    background-color: #181047;
   }
 }
 .active-3 {
-  animation: rotateAndColorChange3 0.3s forwards;
+  animation: scaleBox 0.3s forwards;
 }
 
 .question-box {
   width: 90vw;
   margin: 0 5vw;
   height: 0;
-  padding: 3rem;
+  padding: 1rem;
   border-radius: 2rem;
   background-color: #C400D5;
   position: absolute;
@@ -154,39 +173,12 @@ header img {
   z-index: 2;
   transform: scale(0);
 }
-.question-box h1, .question-box p {
-  color: black;
+.question-box h2, .question-box p {
+  color: #ffffff;
   padding: 1vw 20vw;
 }
-
-.mouse-effect {
-  margin: 10em 0;
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-}
-
-.holder {
-  position: relative;
-  width: 48rem;
-  height: 20rem;
-}
-
-.shadow, .img {
-  position: absolute;
-  width: 12.4vw;
-  height: 15vw;
-  background-size: cover;
-  background-position: 50% 50%;
-  overflow: hidden;
-}
-
-.shadow {
-  background-image: url(padlock-pink.png);
-}
-
-.img {
-  background-image: url(padlock.png);
+.question-box h2 {
+  margin-top: 5rem;
 }
 
 #quiz-container {
@@ -235,7 +227,7 @@ header img {
   border: none;
   background-color: #2C2269;
   margin: 1rem auto;
-  width: 50vw;
+  width: 40vw;
   border-radius: 1rem;
   padding: 1rem;
   cursor: pointer;
@@ -249,31 +241,50 @@ header img {
 .grid-two-colums {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  margin: 6em 15vw;
+  gap: 100px;
+  margin: 1em 10vw;
+  text-align: center;
 }
-.grid-two-colums img {
-  width: 200px;
-}
-.grid-two-colums div {
-  margin: auto 5em;
+.grid-two-colums a {
+  margin: auto 0;
 }
 
 .grid-two-colums-reverse {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  margin: 6em 15vw;
-}
-.grid-two-colums-reverse img {
-  width: 200px;
+  gap: 100px;
+  margin: 6em 10vw;
 }
 .grid-two-colums-reverse div {
-  margin: auto 2em;
+  margin: auto 0;
 }
 
+@media only screen and (max-width: 1300px) {
+  .grid-two-colums, .grid-two-colums-reverse {
+    grid-template-columns: 1fr;
+    width: 70vw;
+    margin: auto 15vw;
+    justify-items: center;
+  }
+  .grid-two-colums a, .grid-two-colums-reverse a {
+    order: 2;
+    margin: auto;
+    margin-bottom: 10em;
+  }
+  .grid-two-colums .box, .grid-two-colums-reverse .box {
+    order: 1;
+  }
+}
 .one-colume {
-  margin: 12em 30em;
+  width: 50vw;
+  margin: 6em auto;
 }
 
+@media only screen and (max-width: 1300px) {
+  .one-colume {
+    width: 70vw;
+  }
+}
 .fakta-box {
   background-color: rgba(255, 255, 255, 0.1254901961);
   border-radius: 1rem;
@@ -283,17 +294,115 @@ header img {
   margin: 1em auto;
 }
 
-.pink-play-button {
-  border: 7px solid #C400D5;
-  border-radius: 2vw;
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translate(5rem, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 }
-.pink-play-button p {
-  color: #C400D5;
-  text-align: center;
-  padding: 2em 0;
-  font-weight: 700;
+.in-view {
+  animation: fade 2s 0.1s both;
 }
 
-.pink-play-button:hover {
-  background-color: rgba(0, 0, 0, 0.231372549);
+.padlock {
+  display: grid;
+  justify-items: center;
+  width: 20em;
+  height: 20em;
+  border: 3px solid #C400D5;
+  border-radius: 100em;
+  background-color: #2A2163;
+  position: relative;
+  transition: border 0.4s ease;
+  margin: auto 0;
+}
+
+.padlock-img {
+  display: grid;
+  justify-items: center;
+}
+
+.padlock-top {
+  width: 7em;
+  margin-top: 4em;
+  transition: transform 0.4s ease, scale 0.4s ease;
+}
+
+.padlock-bottom {
+  width: 8em;
+  margin-bottom: 3.3em;
+  transition: scale 0.4s ease;
+}
+
+.play-button {
+  position: absolute;
+  bottom: -3em;
+  width: 14em;
+  height: 4.5em;
+  border-radius: 10em;
+  border: 11px solid #C400D5;
+  text-align: center;
+  background-color: #2A2163;
+  transition: transform 0.4s ease, background-color 0.4s ease;
+}
+.play-button p {
+  color: white;
+  margin: 10px 0;
+  font-size: 26px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.padlock:hover {
+  border: 7px solid #C400D5;
+}
+.padlock:hover .padlock-top {
+  transform: rotate(-40deg) translateX(-5px) translateY(-35px);
+  scale: 1.1;
+}
+.padlock:hover .padlock-bottom {
+  scale: 1.1;
+}
+.padlock:hover .play-button {
+  transform: translateY(-10px);
+  background-color: #C400D5;
+}
+
+footer {
+  background-color: #181047;
+  margin-top: 5em;
+}
+
+.grid-footer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20vw;
+  padding: 10em 10em;
+}
+.grid-footer p, .grid-footer h3 {
+  color: white;
+  margin-bottom: 1em;
+}
+.grid-footer a {
+  cursor: pointer;
+}
+.grid-footer img {
+  width: 13em;
+  height: 13em;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.grid-footer div {
+  margin-bottom: 5em;
+}
+.grid-footer .center {
+  text-align: center;
+}
+
+.flex-footer {
+  display: flex;
+  justify-content: space-around;
 }/*# sourceMappingURL=style.css.map */
